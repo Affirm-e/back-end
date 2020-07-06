@@ -28,7 +28,9 @@
     "express": "^4.17.1",
     "mongoose": "^5.9.21",
     "save": "^2.4.0",
-    "twit": "^2.2.11"
+    "twit": "^2.2.11",
+    "unique-random-array": "^2.0.0",
+    "unirest": "^0.6.0"
   },
   "directories": {
     "lib": "lib"

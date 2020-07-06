@@ -10,32 +10,21 @@
 //   console.log(`Started on ${PORT}`);
 // });
 
-console.log('the bot is starting'); 
-
 const config = require('./config'); 
 const twit = require('twit'); 
 const T = new twit(config); 
-const Twitter = require('twitter');
 
-makeARandomTweet(); 
-setInterval(makeARandomTweet, 1000 * 20);
+const tweet = {
+  status: '#ourfirsttweet'
+};
 
-// function to generate a random tweet tweet
-function makeARandomTweet(arr) {
-  const index = Math.floor(Math.random() * arr.length);
-  const tweet = {
-    status: 'random number' + index + '#affirme'
-  };
+T.post('statuses/update', tweet, tweeted); 
 
-  T.post('statuses/update', tweet, tweeted); 
-
-  function tweeted(err, data, response) {
-    if(err)
-      console.log('something went wrong'); 
-  } 
-  console.log('It worked'); 
-  
+//callback, not really needed for post, but will give an error
+function tweeted(err, data, response) {
+  if(err) {
+    console.log('Something went wrong');
+  } else {
+    console.log('It worked');
+  }
 }
-
-//this number below is 3600000 which was calculated for every 60 minutes, times 24 so it only happens once per day 
-// setInterval(makeARandomTweet, 86400000);
