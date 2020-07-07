@@ -1,30 +1,44 @@
-// require('dotenv').config();
-// require('./lib/utils/connect')();
+require('dotenv').config();
+require('./lib/utils/connect')();
 
-// const app = require('./lib/app');
-
-// const PORT = process.env.PORT || 7890;
-
-// app.listen(PORT, () => {
-//   // eslint-disable-next-line no-console
-//   console.log(`Started on ${PORT}`);
-// });
-
-const config = require('./config'); 
+const Tweet = require('./lib/models/Tweet');
 const twit = require('twit'); 
-const T = new twit(config); 
 
-const tweet = {
-  status: 'another different tweet'
+const T = new twit({
+  consumer_key: process.env.CONSUMER_KEY,
+  consumer_secret: process.env.CONSUMER_SECRET,
+  access_token: process.env.ACCESS_TOKEN,
+  access_token_secret: process.env.ACCESS_TOKEN_SECRET,
+}); 
+
+//post route
+
+
+
+// get the quote from the api address and assign it to a variable (object)
+const fetchedQuote = () => { 
+  return Tweet
+    .aggregate([
+      {
+        '$sample': {
+          'size': 1
+        }
+      }
+    ])
+    .then(([tweet]) => tweet);
 };
 
-T.post('statuses/update', tweet, tweeted); 
+const sendTweet = status =>  T.post('statuses/update', { status }); 
 
-//callback, not really needed for post, but will give an error
-function tweeted(err, data, response) {
-  if(err) {
-    console.log('Something went wrong');
-  } else {
-    console.log('It worked');
-  }
-}
+const sendRandomTweet = () => {
+  return fetchedQuote()
+    .then(({ quote, author }) => sendTweet(`${quote} - ${author}`))
+    .then(() => console.log(`tweet sent`))
+    .catch((err) => console.log(`could not post tweet`, err));
+};
+
+sendRandomTweet();
+
+//create a new  object to look like --> { tweet: `QUOTE - AUTHOR` }
+
+

@@ -5,7 +5,7 @@ const connect = require('../lib/utils/connect');
 
 const request = require('supertest');
 const app = require('../lib/app');
-const Tweet = require('../lib/models/Tweet'); ``
+const Tweet = require('../lib/models/Tweet'); 
 
 describe('database routes', () => {
   beforeAll(async() => {
