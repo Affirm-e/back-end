@@ -16,3 +16,5 @@
     - Interesting: 
         - How certain functions and methods work and some don't (bc Cheerio sucks)
         - How many async/await functions need to be used in this project for it to work 
+
+# Journal Day 2 (Tuesday, July 6th)
