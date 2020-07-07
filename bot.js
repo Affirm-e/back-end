@@ -1,10 +1,8 @@
 require('dotenv').config();
+require('./lib/utils/connect')();
+
+const Tweet = require('./lib/models/Tweet');
 const twit = require('twit'); 
-
-
-const tweet = {
-  status: 'trying to post to the twitter account affirme again again again'
-};
 
 const T = new twit({
   consumer_key: process.env.CONSUMER_KEY,
@@ -14,13 +12,33 @@ const T = new twit({
 }); 
 
 //post route
-T.post('statuses/update', tweet, tweeted); 
 
-//callback, not really needed for post, but will give an error
-function tweeted(err, data, response) {
-  if(err) {
-    console.log('Something went wrong');
-  } else {
-    console.log('It worked');
-  }
-}
+
+
+// get the quote from the api address and assign it to a variable (object)
+const fetchedQuote = () => { 
+  return Tweet
+    .aggregate([
+      {
+        '$sample': {
+          'size': 1
+        }
+      }
+    ])
+    .then(([tweet]) => tweet);
+};
+
+const sendTweet = status =>  T.post('statuses/update', { status }); 
+
+const sendRandomTweet = () => {
+  return fetchedQuote()
+    .then(({ quote, author }) => sendTweet(`${quote} - ${author}`))
+    .then(() => console.log(`tweet sent`))
+    .catch((err) => console.log(`could not post tweet`, err));
+};
+
+sendRandomTweet();
+
+//create a new  object to look like --> { tweet: `QUOTE - AUTHOR` }
+
+
