@@ -2,12 +2,12 @@
   "name": "affirmations-project",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "bot.js",
   "scripts": {
     "test": "jest --verbose --runInBand --testLocationInResults",
     "test:watch": "npm run test -- --watch",
-    "start": "node server.js",
-    "start:watch": "nodemon server.js"
+    "start": "node bot.js",
+    "start:watch": "nodemon bot.js"
   },
   "jest": {
     "testEnvironment": "node"
@@ -28,6 +28,21 @@
     "cheerio": "^1.0.0-rc.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.9.21"
-  }
+    "mongoose": "^5.9.21",
+    "save": "^2.4.0",
+    "twit": "^2.2.11",
+    "unique-random-array": "^2.0.0",
+    "unirest": "^0.6.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Affirm-e/affirmations-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Affirm-e/affirmations-project/issues"
+  },
+  "homepage": "https://github.com/Affirm-e/affirmations-project#readme"
 }
