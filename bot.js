@@ -1,22 +1,18 @@
 require('dotenv').config();
-// require('./lib/utils/connect')();
-
-// const app = require('./lib/app');
-
-// const PORT = process.env.PORT || 7890;
-
-// app.listen(PORT, () => {
-//   // eslint-disable-next-line no-console
-//   console.log(`Started on ${PORT}`);
-// });
-
-const config = require('./config'); 
+// const config = require('./config'); 
 const twit = require('twit'); 
-const T = new twit(config); 
+
 
 const tweet = {
-  status: 'trying to post to the twitter account affirme again again'
+  status: 'trying to post to the twitter account affirme again again again'
 };
+
+const T = new twit({
+  consumer_key: process.env.CONSUMER_KEY,
+  consumer_secret: process.env.CONSUMER_SECRET,
+  access_token: process.env.ACCESS_TOKEN,
+  access_token_secret: process.env.ACCESS_TOKEN_SECRET,
+}); 
 
 T.post('statuses/update', tweet, tweeted); 
 
