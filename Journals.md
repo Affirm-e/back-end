@@ -18,3 +18,14 @@
         - How many async/await functions need to be used in this project for it to work 
 
 # Journal Day 2 (Tuesday, July 6th)
+1. What progress did your team make today?
+    - We were able to make sure that our actual Twitter account was approved for Dev capabilitiesWe hooked up our database to our front-end twitter bot and are able to manually tweet to the account Created a broader and larger set of quotes for our database, increasing it from about 200 to 1.7k quotes and author pairings. created some tests, even though we did it backwards, to test some of our functionality for the functions that we did already create.
+
+2. What specific contributions did you make? Please share links to your Pull Requests (or commits) even if they haven’t been merged.
+    - Testing for combinedQuotes and bot functionality
+    - https://github.com/Affirm-e/affirmations-project/pull/1/commits
+
+3. What has been most challenging today? Your responses here are held confidential within the instructional team.
+    - Piecing the logic together for finding the max amount of pages per keyword 
+    - Randomizer function to select one random quote to post to twitter
+    - Navigating twitter API to use the correct pathing to be able to post to our bot
