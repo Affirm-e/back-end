@@ -1,5 +1,4 @@
 require('dotenv').config();
-// const config = require('./config'); 
 const twit = require('twit'); 
 
 
@@ -14,6 +13,7 @@ const T = new twit({
   access_token_secret: process.env.ACCESS_TOKEN_SECRET,
 }); 
 
+//post route
 T.post('statuses/update', tweet, tweeted); 
 
 //callback, not really needed for post, but will give an error
@@ -24,5 +24,3 @@ function tweeted(err, data, response) {
     console.log('It worked');
   }
 }
-
-
