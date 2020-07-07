@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 // require('./lib/utils/connect')();
 
 // const app = require('./lib/app');
@@ -15,7 +15,7 @@ const twit = require('twit');
 const T = new twit(config); 
 
 const tweet = {
-  status: 'another different tweet'
+  status: 'trying to post to the twitter account affirme again again'
 };
 
 T.post('statuses/update', tweet, tweeted); 
@@ -28,3 +28,5 @@ function tweeted(err, data, response) {
     console.log('It worked');
   }
 }
+
+
