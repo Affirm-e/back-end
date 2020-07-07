@@ -9,9 +9,9 @@
 // //   access_token_secret: process.env.ACCESS_TOKEN_SECRET,
 // // };
 
-// module.exports = { 
-//   consumer_key: 'wCZVvFeziuvAze7MeDNIQGyJ0',
-//   consumer_secret: '5W8mSfxNnZc1oAMVuQfcr0nvPBiuHbfaGnshMQoQsgSGBH3fSb',
-//   access_token: '788520766429995008-t1dQkacH0ISs3lG4p1dtLQZtRtYMoof',
-//   access_token_secret: 'VbDz7zqGGrtijLkl8BK7UhgbwsYx549ZjocfoCyQRuPe9',
-// };
+module.exports = { 
+  consumer_key: 'J4seflfRK7bZ9FmEpW4v0yDwg',
+  consumer_secret: 'dUD6OGfPy5ET8tZUsgUBY87Vbk5NAju5rFZLpxWMgFgvMS8nr2',
+  access_token: '788520766429995008-kCptNUJXpUSgXJyq26YMV6r3aaejZCz',
+  access_token_secret: 'VTPqYjtKJaeZY1w6ocgfFusmE7Cz0DWBaKdngrn1dDJyv',
+};

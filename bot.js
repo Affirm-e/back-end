@@ -15,7 +15,7 @@ const twit = require('twit');
 const T = new twit(config); 
 
 const tweet = {
-  status: '#ourfirsttweet'
+  status: 'another different tweet'
 };
 
 T.post('statuses/update', tweet, tweeted); 
