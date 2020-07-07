@@ -11,11 +11,8 @@ const T = new twit({
   access_token_secret: process.env.ACCESS_TOKEN_SECRET,
 }); 
 
-//post route
+// get the quote from the api address and assign it to a variable(object)
 
-
-
-// get the quote from the api address and assign it to a variable (object)
 const fetchedQuote = () => { 
   return Tweet
     .aggregate([
@@ -39,6 +36,12 @@ const sendRandomTweet = () => {
 
 sendRandomTweet();
 
-//create a new  object to look like --> { tweet: `QUOTE - AUTHOR` }
+//TECH DEBT:
+// setInterval(sendRandomTweet, 1000*60);
+// ^^ to implement timer on our tweets
+
+module.exports = {
+  fetchedQuote
+};
 
 
