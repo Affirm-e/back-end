@@ -16,3 +16,8 @@ jobs:
     - run: npm test
       env:
         CI: true
+        CONSUMER_KEY: true
+        CONSUMER_SECRET: true
+        ACCESS_TOKEN: true
+        ACCESS_TOKEN_SECRET: true
+
