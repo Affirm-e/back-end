@@ -25,18 +25,37 @@ const fetchedQuote = () => {
         }
       }
     ])
-    .then(([tweet]) => tweet);
+    .then(([tweet]) => {
+      console.log(tweet);
+      return tweet});
 };
 
 const sendTweet = status =>  T.post('statuses/update', { status }); 
 
 const sendRandomTweet = () => {
   return fetchedQuote()
-    .then(({ quote, author }) => sendTweet(`${quote} - ${author}`))
+    .then(({ quote, author }) => {
+      let tweet = `${quote} - ${author}`;
+      do{
+        const { quote, author } = fetchedQuote();
+        tweet = `${quote} - ${author}`;
+      }
+      while(tweet.length > 280);
+
+      sendTweet(tweet);
+    }
+    )
     .then(() => console.log(`tweet sent`))
     .catch((err) => console.log(`could not post tweet`, err));
 };
 
+// const sendRandomTweet = async() => {
+//   const {quote, author } = await fetchedQuote();
+//   let tweet = `${quote} - ${author}`;
+
+
+
+// }
 sendRandomTweet();
 
 //create a new  object to look like --> { tweet: `QUOTE - AUTHOR` }
