@@ -25,13 +25,20 @@ const fetchedQuote = () => {
     .then(([tweet]) => tweet);
 };
 
-const sendTweet = status =>  T.post('statuses/update', { status }); 
 
 const sendRandomTweet = () => {
-  return fetchedQuote()
-    .then(({ quote, author }) => sendTweet(`${quote} - ${author}`))
-    .then(() => console.log(`tweet sent`))
-    .catch((err) => console.log(`could not post tweet`, err));
+
+  const sendTweet = status =>  T.post('statuses/update', { status }); 
+
+  if(sendTweet.length <= 280) {
+    
+    return fetchedQuote()
+      .then(({ quote, author }) => sendTweet(`${quote} - ${author}`))
+      .then(() => console.log(`tweet sent`))
+      .catch((err) => console.log(`could not post tweet`, err));
+  } else {
+    sendRandomTweet();
+  }
 };
 
 sendRandomTweet();
