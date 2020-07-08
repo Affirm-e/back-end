@@ -27,7 +27,7 @@ const fetchedQuote = () => {
     ])
     .then(([tweet]) => {
       console.log(tweet);
-      return tweet});
+      return tweet; });
 };
 
 const sendTweet = status =>  T.post('statuses/update', { status }); 
