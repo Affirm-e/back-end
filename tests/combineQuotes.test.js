@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const connect = require('../lib/utils/connect');
 
 const Tweet = require('../lib/models/Tweet');
-const combineQuotes = require('../lib/utils/combineQuotes');
+const { combineQuotes } = require('../lib/utils/combineQuotes');
 
 describe('function combining quotes', () => {
   beforeAll(async() => {
