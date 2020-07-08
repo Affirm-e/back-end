@@ -11,16 +11,11 @@ const T = new twit({
   access_token_secret: process.env.ACCESS_TOKEN_SECRET,
 }); 
 
-<<<<<<< HEAD
-// get the quote from the api address and assign it to a variable(object)
-
-=======
 //post route
 
 
 
 // get the quote from the api address and assign it to a variable (object)
->>>>>>> 0745e2c301a042a06bcac6d46a1f299479fb0665
 const fetchedQuote = () => { 
   return Tweet
     .aggregate([
@@ -30,10 +25,6 @@ const fetchedQuote = () => {
         }
       }
     ])
-<<<<<<< HEAD
-    .then(([tweet]) => tweet);
-};
-=======
     .then(([tweet]) => {
       console.log(tweet);
       return tweet; });
@@ -61,7 +52,6 @@ const sendRandomTweet = () => {
 // const sendRandomTweet = async() => {
 //   const {quote, author } = await fetchedQuote();
 //   let tweet = `${quote} - ${author}`;
->>>>>>> 0745e2c301a042a06bcac6d46a1f299479fb0665
 
 
 
