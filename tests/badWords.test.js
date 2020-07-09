@@ -3,7 +3,7 @@ const mongodb = new MongoMemoryServer();
 const mongoose = require('mongoose');
 const connect = require('../lib/utils/connect');
 
-const badWords = require('../lib/utils/badWords');
+const { filter } = require('../lib/utils/fetchedQuote');
 
 
 describe('bad words filter', () => {
@@ -22,9 +22,11 @@ describe('bad words filter', () => {
   }); 
 
   it('filters quotes according to selected bad words', () => {
-    return badWords()
-      .then(res =>{
-        expect(res).toEqual(24);
+    return filter()
+      .then(res => {
+        expect(res).toEqual({
+          
+        });
       });
   });
   
