@@ -4,7 +4,11 @@ const mongoose = require('mongoose');
 const connect = require('../lib/utils/connect');
 
 const Tweet = require('../lib/models/Tweet');
+<<<<<<< HEAD
 const { fetchedQuote } = require('../bot');
+=======
+const { fetchedQuote } = require('../lib/utils/fetchedQuote');
+>>>>>>> 6825a2994121dd7633c257153d6b7273404e9a45
 
 describe('fetchedQuote function', () => {
   beforeAll(async() => {

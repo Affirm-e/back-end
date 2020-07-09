@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const connect = require('../lib/utils/connect');
 
 const Tweet = require('../lib/models/Tweet');
-const combineQuotes = require('../lib/utils/combineQuotes');
+const { combineQuotes } = require('../lib/utils/combineQuotes');
 
 describe('function combining quotes', () => {
   beforeAll(async() => {
@@ -15,28 +15,6 @@ describe('function combining quotes', () => {
   beforeEach(() => {
     return mongoose.connection.dropDatabase();
   }); 
-
-  beforeEach(async() => {
-    await Tweet.create([
-      {
-        quote: 'A quote',
-        author: 'An author'
-      },
-      {
-        quote: 'A quote 2',
-        author: 'An author 2'
-      },
-      {
-        quote: 'A quote 3',
-        author: 'An author 3'
-      },
-      {
-        quote: 'A quote 4',
-        author: 'An author 4'
-      }
-    ]
-    );
-  });
 
   afterAll(async() => {
     await mongoose.connection.close();
