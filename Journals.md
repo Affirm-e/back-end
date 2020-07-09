@@ -29,4 +29,7 @@
     - Piecing the logic together for finding the max amount of pages per keyword 
     - Randomizer function to select one random quote to post to twitter
     - Navigating twitter API to use the correct pathing to be able to post to our bot
+<<<<<<< HEAD
+=======
 
+>>>>>>> 6825a2994121dd7633c257153d6b7273404e9a45
