@@ -5,7 +5,10 @@ const connect = require('../lib/utils/connect');
 
 const { filter } = require('../lib/utils/fetchedQuote');
 
-
+// mock fetchedQuotes to only return 2 quotes at random, one of them has bad words, one of them doesnt
+// expect filter to only return quote that doesnt have bad words in it
+// filter SHOULD call itself again if filter returns a quote with bad words
+ 
 describe('bad words filter', () => {
   beforeAll(async() => {
     const uri = await mongodb.getUri();
