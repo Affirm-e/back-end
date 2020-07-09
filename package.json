@@ -25,18 +25,21 @@
   },
   "dependencies": {
     "bad-words": "^3.0.3",
+    "body-parser": "^1.19.0",
     "chance": "^1.1.6",
     "cheerio": "^1.0.0-rc.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.21",
     "save": "^2.4.0",
+    "twilio": "^3.48.0",
     "twit": "^2.2.11",
     "unique-random-array": "^2.0.0",
     "unirest": "^0.6.0"
   },
   "directories": {
-    "lib": "lib"
+    "lib": "lib",
+    "test": "tests"
   },
   "repository": {
     "type": "git",
