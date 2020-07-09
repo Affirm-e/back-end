@@ -29,7 +29,7 @@
     - Piecing the logic together for finding the max amount of pages per keyword 
     - Randomizer function to select one random quote to post to twitter
     - Navigating twitter API to use the correct pathing to be able to post to our bot
-    
+
 # Journal 3 (Wednesday, July 8th)
 1. What progress did your team make today?
 - Successfully had our Twitter-bot  only tweet our quotes that had a  character limit of 280 characters or lower to meet Twitter standards. 
