@@ -44,8 +44,6 @@ describe('seedData function limiting quotes to 280 characters', () => {
 });
 
 
-
-
 // .get from one page in the database
 // expect a return of the amount of quotes that meet the 280 character criteria 
 // 
